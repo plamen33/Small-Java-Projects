@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import javax.swing.tree.ExpandVetoException;
 
 public class JavaCalculator {
     public static void main(String[] args) {
@@ -31,6 +32,7 @@ class CalculatorPlatform extends JPanel {
             result = 0;
             lastCommand = "=";
             start=true;
+
             display = new JButton("0");
             display.setEnabled(false);
             add(display, BorderLayout.NORTH);
@@ -59,7 +61,7 @@ class CalculatorPlatform extends JPanel {
 
             addButton("0", insertAction);
             addButton(".", insertAction);
-            addButton("=", insertAction);
+            addButton("=", commandAction);
             addButton("-", commandAction);
 
             add(panel, BorderLayout.CENTER);
@@ -73,14 +75,52 @@ class CalculatorPlatform extends JPanel {
     private class InsertAction implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
-
+          String input = event.getActionCommand();
+            if (start){
+                display.setText("");
+                start = false;
+            }
+            display.setText(display.getText() + input);
         }
     }
 
     private class CommandAction implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-
+            try {
+         String command = event.getActionCommand();
+            if (start){
+                if(command.equals("-")){
+                    display.setText(command);
+                    start = false;
+                }
+                else{
+                    lastCommand = command;
+                }
+            }
+            else{
+                calculate(Double.parseDouble(display.getText()));
+                lastCommand = command;
+                start = true;
+            }
+            }
+            catch(Exception e){display.setText("" + 0);}
         }
+    } // end of CommandAction class
+    public void calculate(Double number){
+
+          if (lastCommand.equals("+")) {
+              result += number;
+          } else if (lastCommand.equals("-")) {
+              result -= number;
+          } else if (lastCommand.equals("*")) {
+              result *= number;
+          } else if (lastCommand.equals("/")) {
+              result /= number;
+          } else if (lastCommand.equals("=")) {
+              result = number;
+          }
+          display.setText("" + result);
+
     }
 
     private JButton display;
@@ -88,9 +128,7 @@ class CalculatorPlatform extends JPanel {
     private double result;
     private String lastCommand;
     private boolean start;
-
-
-
+    
 }// end of CalculatorPlatform class
 
 
