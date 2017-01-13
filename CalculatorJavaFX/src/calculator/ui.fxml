@@ -19,7 +19,7 @@
 
 <StackPane alignment="CENTER">
     <Rectangle fill ="TRANSPARENT" stroke="GREY" width="250" height="50" />
-    <Text fx:id="output"/>
+    <Text fx:id="output" font="$FONT"/>      <!-- change the Font of the Calculator values to match the font of the Program-->
 </StackPane>
 
     <HBox spacing="10" alignment="CENTER"> <!--Horizontal Box-->
