@@ -13,9 +13,10 @@ public class Controller {
     @FXML
     private Text output;
 
-    private long number1 = 0;
+    private double number1 = 0; // by default number1 value equals 0
     private String operator = "";
     private boolean start = true;
+	private String clearCommand = "";
 
     private Model model = new Model();
 
@@ -26,28 +27,37 @@ public class Controller {
             start = false;
         }
 
-        String value = ((Button)event.getSource()).getText();
-        output.setText(output.getText() + value);
+        String value = ((Button)event.getSource()).getText();  // returns the text of the Button which is on the button
+        output.setText(output.getText() + value);  // get the value - we append the value at the end
     }
 
     @FXML
     private void processOperator(ActionEvent event) {
         String value = ((Button)event.getSource()).getText();
 
-        if (!"=".equals(value)) {
+         if (!"=".equals(value) && !"Clear".equals(value)) {  // we check if value does not equal the final equal sign as it is the final calculate sign
             if (!operator.isEmpty()){
                 return;
             }
             operator = value;
-            number1 = Long.parseLong(output.getText());
+            number1 = Double.parseDouble(output.getText());
+            output.setText("");
+        }
+		else if (value.equals("Clear")) {
+            number1 = 0;
+            operator = ""; // clear the operator
+            start = true;
             output.setText("");
         }
         else {
             if (operator.isEmpty()){
                 return;
             }
-            output.setText(String.valueOf(model.calculate(number1, Long.parseLong(output.getText()), operator)));
-            operator = "";
+            double number2 = Double.parseDouble(output.getText());
+            output.setText(String.valueOf(model.calculate(number1, number2, operator)));
+            double result = model.calculate(number1, number2, operator);
+            number1 = result; // in case one decides to do actions further
+            operator = ""; // clear the operator
             start = true;
         }
     }

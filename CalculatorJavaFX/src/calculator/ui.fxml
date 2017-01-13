@@ -43,7 +43,8 @@
         <Button text="-" prefWidth="50" font="$FONT" onAction="#processOperator" />
     </HBox>
     <HBox spacing="10" alignment="CENTER"> <!--Horizontal Box-->
-        <Button text="0" prefWidth="110" font="$FONT" onAction="#processNumpad" />
+        <Button text="Clear" prefWidth="50"  onAction="#processOperator" />
+        <Button text="0" prefWidth="50" font="$FONT" onAction="#processNumpad" />
         <Button text="=" prefWidth="50" font="$FONT" onAction="#processOperator" />
         <Button text="+" prefWidth="50" font="$FONT" onAction="#processOperator" />
     </HBox>
