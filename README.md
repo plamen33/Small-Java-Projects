@@ -1,8 +1,7 @@
 This repository contains small Java projects, which I am developing
-during my Java learning.
+during my Java learning courses.
 
-1/ Calculator - this is a small Calculator application developed on Swing.
-No plans for further upgrade, as SWING is almost obsolete.
+1/ Calculator - this is a small Calculator application developed using Swing.
 
 2/ Digital Clock - a small Java Digital clock using the old Swing GUI.
 
