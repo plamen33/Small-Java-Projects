@@ -16,10 +16,6 @@
      <fx:define>
          <Font fx:id="FONT" size="18"/>
      </fx:define>
-      <!--This is done to change the Title of the program window-->
-    <!--<children>-->
-        <!--<TextField fx:id="input" layoutX="16.0" layoutY="32.0" onAction="#doChangeTitle"/>-->
-    <!--</children>-->
 
 <StackPane alignment="CENTER">
     <Rectangle fill ="TRANSPARENT" stroke="GREY" width="250" height="50" />

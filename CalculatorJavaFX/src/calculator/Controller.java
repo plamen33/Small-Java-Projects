@@ -51,6 +51,7 @@ public class Controller {
                     return;
                 }
                 double number2 = Double.parseDouble(output.getText());
+
                 output.setText(String.valueOf(model.calculate(number1, number2, operator)));
                 double result = model.calculate(number1, number2, operator);
                 number1 = result; // in case one decides to do actions further
