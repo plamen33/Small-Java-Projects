@@ -9,3 +9,5 @@ Jar and Exe files available for this project.
 3/ CalculatorJavaFX - Simple Calculator using the modern JavaFX platform based on the MVC design pattern.    
 Jar and Exe files available for this project.
 
+4/ JavaTest - Small JavaFX Test Application. Jar file available for this project.
+
