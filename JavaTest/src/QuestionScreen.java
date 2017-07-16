@@ -79,5 +79,4 @@ public class QuestionScreen {
 		Main.setScene(scene);
 
 	}
-
 }

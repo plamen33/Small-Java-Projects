@@ -17,7 +17,7 @@ public class Main extends Application {
 	private static final int WINDOW_WIDTH = 500;
 	private static final int WINDOW_HEIGHT = 500;
 	private static final int DEFAULT_VALUE_INSETS = 35;
-	private static final int NUMBER_OF_QUESTIONS = 24;
+	private static final int NUMBER_OF_QUESTIONS = 27;
 	private static int score = 0;
 	static Stage stage;
 	private static int counter = 0;
@@ -64,12 +64,12 @@ public class Main extends Application {
 		stage = primaryStage;
 		stage.setTitle("Java OOP Test");
 
-		Label label = new Label("Welcome! Press the button to start the test.");
+		Label label = new Label("Welcome! Press the button to start the test.\n          This is the Java OOP test.");
 		label.setTextFill(Paint.valueOf("green"));
 
 		label.setFont(new Font(MAX_FONT_SIZE));
 		label.setAlignment(Pos.CENTER);
-		Button startButton = new Button("Start test");
+		Button startButton = new Button("Start the test");
 		startButton.setFont(new Font(FONT_SIZE));
 		questions.get(0);
 		startButton.setOnAction(e -> {
@@ -135,13 +135,13 @@ public class Main extends Application {
 		answersC.add("extended");
 		answersD.add("protected");
 		answers.add("abstract");
-		
+
 		questions.add("Interface methods cannot be ");
-		answersA.add("static");
+		answersA.add("static (assume the use of Java 8)");
 		answersB.add("abstract");
 		answersC.add("private");
 		answersD.add("public");
-		answers.add("static");
+		answers.add("private");
 
 		questions.add("Abstract classes cannot be :");
 		answersA.add("extended");
@@ -269,6 +269,27 @@ public class Main extends Application {
 		answersC.add("Z z = new Y();");
 		answersD.add("Z z = new X();");
 		answers.add("Z z = new X();");
+
+		questions.add(" Object o1 = new Object();  System.out.println(o1.getClass() == Object.class); ");
+		answersA.add("false");
+		answersB.add("true");
+		answersC.add("Compile error");
+		answersD.add("Runtime error");
+		answers.add("true");
+
+		questions.add("Object a1 = new Object();  Object a2 = a1; System.out.print(a1 == a2); System.out.print(a2.equals(a1));");
+		answersA.add("falsefalse");
+		answersB.add("falsetrue");
+		answersC.add("truetrue");
+		answersD.add("truefalse");
+		answers.add("truetrue");
+		//27
+		questions.add("Can abstract class have a constructor ?");
+		answersA.add("No");
+		answersB.add("Yes");
+		answersC.add("Depends");
+		answersD.add("Sometimes yes, sometimes no");
+		answers.add("Yes");
 	}
 
 	public static void  onClose(){
@@ -284,7 +305,7 @@ public class Main extends Application {
 				"\nQuestion3: private" +
 				"\nQuestion4: instantiated" +
 				"\nQuestion5: abstract\n" +
-				"Question6: static\n" +
+				"Question6: private\n" +
 				"Question7: instantiated\n" +
 				"Question8: true\n" +
 				"Question9: java.lang\n" +
@@ -302,7 +323,10 @@ public class Main extends Application {
 				"Question21: to tell which fields not to serialize\n"+
 				"Question22: All is correct\n"+
 				"Question23: Runtime\n"+
-				"Question24: Z z = new X();\n"
+				"Question24: Z z = new X();\n" +
+				"Question25: true\n"+
+				"Question26: truetrue\n"+
+				"Question27: Yes\n"
 
 		);
 

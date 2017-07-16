@@ -11,23 +11,23 @@ public class ScoreScreen {
 
 	public static void display(Integer score) {
 		final double FONT_SIZE = 17.0;
-		Label label = new Label("Your score is: " + score + "/24");
+		Label label = new Label("Your score is: " + score + "/27");
 		label.setFont(new Font(FONT_SIZE));
 		String result = "";
 
-		if(score == 24){result = "Well done.";}
-		else if(score == 23){result = "Almost perfect."; }
-		else if(score == 20|| score == 22|| score == 21){result = "Good result !"; }
-		else if(score == 18|| score == 19){result = "Not bad, but try more !"; }
-		else if (score<18){result = "Surely you could do better.";}
+		if(score == 27){result = "Well done.";}
+		else if(score == 26||score==25){result = "Almost perfect."; }
+		else if(score == 24|| score == 23|| score == 22){result = "Good result !"; }
+		else if(score == 20|| score == 21){result = "Not bad, but try more !"; }
+		else if (score<20){result = "Surely you could do better.";}
 
 		Label labelResult = new Label(result);
 
-		if(score == 24){result = "Well done."; labelResult.setTextFill(Paint.valueOf("green"));}
-		else if(score == 23){result = "Almost perfect."; labelResult.setTextFill(Paint.valueOf("blue"));}
-		else if(score == 20 || score == 21 || score == 22){result = "Good result !"; labelResult.setTextFill(Paint.valueOf("orange"));}
-		else if(score == 18 || score == 19){result = "Not bad, but try more !"; labelResult.setTextFill(Paint.valueOf("lime"));}
-		else if (score<18){result = "Surely you could do better."; labelResult.setTextFill(Paint.valueOf("red"));}
+		if(score == 27){result = "Well done."; labelResult.setTextFill(Paint.valueOf("green"));}
+		else if(score == 26||score==25){result = "Almost perfect."; labelResult.setTextFill(Paint.valueOf("blue"));}
+		else if(score == 24 || score == 23 || score == 22){result = "Good result !"; labelResult.setTextFill(Paint.valueOf("orange"));}
+		else if(score == 20 || score == 21){result = "Not bad, but try more !"; labelResult.setTextFill(Paint.valueOf("lime"));}
+		else if (score<20){result = "Surely you could do better."; labelResult.setTextFill(Paint.valueOf("red"));}
 
 		labelResult.setFont(new Font(FONT_SIZE));
 
