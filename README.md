@@ -12,3 +12,5 @@ Jar and Exe files available for this project.
 4/ JavaTest - Small JavaFX Test Application. Jar file available for this project.
 
 5/ SimpleChat - Small Client Server Chat Application. GUI based on the top JavaFX technology platform.
+
+6/ KeystoreViewerJFX - GUI application, which reads keystore certificates.
