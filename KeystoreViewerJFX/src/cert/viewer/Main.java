@@ -15,14 +15,14 @@ public class Main extends Application {
         primaryStage.setTitle("Keystore Viewer");
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../fxml/certviewer.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/cert/fxml/certviewer.fxml"));
         Parent fxmlMain = fxmlLoader.load();
 
         Scene scene = new Scene(fxmlMain, 950, 600);
-        scene.getStylesheets().add(getClass().getResource("../css/style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/cert/css/style.css").toExternalForm());
 
         primaryStage.setScene(scene);
-        primaryStage.getIcons().add(new Image(getClass().getResource("../images/cert.png").toExternalForm()));
+        primaryStage.getIcons().add(new Image(getClass().getResource("/cert/images/cert.png").toExternalForm()));
         primaryStage.show();
     }
 
